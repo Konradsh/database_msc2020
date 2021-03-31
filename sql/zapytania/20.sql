@@ -33,22 +33,8 @@ SELECT
 FROM
   (
     SELECT
-      CASE WHEN (
-        SELECT
-          klient
-        FROM
-          sumaKlient
-        LIMIT
-          1
-      ) < sumaKlienci THEN 1 ELSE 0 END AS wiecej,
-      CASE WHEN (
-        SELECT
-          klient
-        FROM
-          sumaKlient
-        LIMIT
-          1
-      ) > sumaKlienci THEN 1 ELSE 0 END AS mniej
+      CASE WHEN (SELECT klient FROM sumaKlient LIMIT 1) < sumaKlienci THEN 1 ELSE 0 END AS wiecej,
+      CASE WHEN (SELECT klient FROM sumaKlient LIMIT 1) > sumaKlienci THEN 1 ELSE 0 END AS mniej
     from
       sumaKlienci
       INNER JOIN sale ON sumaKlient.customer_id = sale.customer_id
