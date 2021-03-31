@@ -1,0 +1,14 @@
+CREATE INDEX customer_inx on customer(id);
+CREATE INDEX last_n_inx on customer(last_name);
+CREATE INDEX offer_customer_inx on offer_customer(id);
+CREATE INDEX offer_customer_offer_inx on offer_customer(offer_id);
+CREATE INDEX offer_customer_cust_inx on offer_customer(customer_id);
+CREATE INDEX sale_inx on sale(id);
+CREATE INDEX offer_inx on offer(id);
+CREATE INDEX offer_product_inx on offer(product_id);
+CREATE INDEX offer_price_inx on offer(offer_price);
+CREATE INDEX oproduct_inx on product(id);
+CREATE INDEX oproduct_cat_inx on product_category(id);
+CREATE INDEX address_inx on address(id);
+CREATE INDEX address_city_inx on address(city);
+CREATE INDEX customer_addr_inx on customer(invoice_address_id);

@@ -1,0 +1,1 @@
+SELECT count(*) FROM customer WHERE last_name like "A%" or last_name like "a%";
